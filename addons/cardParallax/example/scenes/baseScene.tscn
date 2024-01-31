@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://b22py55g6fjfp"]
+
+[ext_resource type="Material" uid="uid://dtsy4bdodgglo" path="res://addons/cardParallax/example/materials/exampleMaterialLit.tres" id="1_1kyqh"]
+[ext_resource type="Script" path="res://addons/cardParallax/example/scenes/demoSpin.gd" id="1_lrij7"]
+
+[sub_resource type="Environment" id="Environment_x1ku3"]
+background_mode = 1
+background_color = Color(0.145098, 0.2, 0.439216, 1)
+glow_levels/3 = 0.0
+glow_levels/4 = 1.0
+glow_levels/5 = 0.0
+glow_levels/6 = 1.0
+glow_strength = 1.17
+glow_blend_mode = 4
+fog_light_color = Color(0.0196078, 0.027451, 0.0352941, 1)
+fog_density = 0.0
+fog_height = 0.13
+fog_height_density = 8.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_d611b"]
+material = ExtResource("1_1kyqh")
+size = Vector2(0.5, 0.875)
+
+[node name="BaseScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_x1ku3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2, 0)
+fov = 37.8493
+
+[node name="CardMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+mesh = SubResource("PlaneMesh_d611b")
+skeleton = NodePath("")
+script = ExtResource("1_lrij7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
+
+[node name="CardMesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.125, 0)
+mesh = SubResource("PlaneMesh_d611b")
+skeleton = NodePath("")
+script = ExtResource("1_lrij7")
+
+[node name="CardMesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.125, 0)
+mesh = SubResource("PlaneMesh_d611b")
+skeleton = NodePath("")
+script = ExtResource("1_lrij7")
+
+[node name="CardMesh4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.125, 0)
+mesh = SubResource("PlaneMesh_d611b")
+skeleton = NodePath("")
+script = ExtResource("1_lrij7")
+
+[node name="CardMesh5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.125, 0)
+mesh = SubResource("PlaneMesh_d611b")
+skeleton = NodePath("")
+script = ExtResource("1_lrij7")

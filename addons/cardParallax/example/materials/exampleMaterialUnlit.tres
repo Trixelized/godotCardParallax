@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=8 format=3 uid="uid://dnn2ugmna7634"]
+
+[ext_resource type="Shader" path="res://addons/cardParallax/shaders/cardUnlit.gdshader" id="1_fusxx"]
+[ext_resource type="Texture2D" uid="uid://cd4if0e4yfwk5" path="res://addons/cardParallax/example/textures/card.png" id="2_4acr7"]
+[ext_resource type="Texture2D" uid="uid://cb60nu2oc6itg" path="res://addons/cardParallax/example/textures/back.png" id="2_5kh7m"]
+[ext_resource type="Texture2D" uid="uid://dcnwb54ur4ctd" path="res://addons/cardParallax/example/textures/mask.png" id="3_0kmgq"]
+[ext_resource type="Texture2D" uid="uid://c3esdquhajm61" path="res://addons/cardParallax/example/textures/shine.png" id="4_duay6"]
+[ext_resource type="Texture2D" uid="uid://baxw8ue75vthj" path="res://addons/cardParallax/example/textures/head.png" id="5_napnq"]
+[ext_resource type="Texture2D" uid="uid://uelyjx3if451" path="res://addons/cardParallax/example/textures/bg.png" id="6_aj5qa"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_fusxx")
+shader_parameter/uvFlip = Vector2(-1, -1)
+shader_parameter/aspectRatio = Vector2(0.5, 0.875)
+shader_parameter/alphaThreshold = 0.5
+shader_parameter/mainTexture = ExtResource("2_4acr7")
+shader_parameter/backTexture = ExtResource("2_5kh7m")
+shader_parameter/depth1 = 0.025
+shader_parameter/texture1 = ExtResource("4_duay6")
+shader_parameter/depth2 = 0.1
+shader_parameter/texture2 = ExtResource("5_napnq")
+shader_parameter/depth3 = 0.25
+shader_parameter/texture3 = ExtResource("6_aj5qa")
+shader_parameter/maskTexture = ExtResource("3_0kmgq")
